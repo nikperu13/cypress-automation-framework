@@ -41,9 +41,10 @@ module.exports = defineConfig({
       runMode: 0,
       openMode: 1,
     },
-    // env: {
-    //   webdriveruni_homepage: "http://www.webdriveruniversity.com",
-    //   first_name: "Sarah",
-    // },
+    env:{
+      "name":"Nicolas Garcia Rosell",
+      "firstName": "Nicolas",
+      "webdriveruni_homepage": "http://www.webdriveruniversity.com"
+    }
   },
 });
