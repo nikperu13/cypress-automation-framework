@@ -14,6 +14,7 @@ describe("Test File Upload via webdriveruni", () => {
 
   it("Upload No file...", () => {
     cy.visit("http://www.webdriveruniversity.com");
+    cy.xpath("//\*[@id='file-upload']").should("exist");
     cy.get("#file-upload")
       .invoke("removeAttr", "target")
       .click({ force: true });

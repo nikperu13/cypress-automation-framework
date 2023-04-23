@@ -34,7 +34,7 @@ describe("Verifying variables, cypress commands and jquery commands", () => {
         })
     });
 
-    it.only("Validate properties of the Contact Us Page", () => {
+    it("Validate properties of the Contact Us Page", () => {
         cy.visit("https://automationteststore.com/index.php?rt=content/contact")
 
         //Uses cypress commands and chaining
@@ -42,13 +42,14 @@ describe("Verifying variables, cypress commands and jquery commands", () => {
 
         //JQuery Approach
         cy.contains('#ContactUsFrm', 'Contact Us Form').then(text => {
-            const firstNameText = text.find('#field_11').text()
+            const firstNameText: string = text.find('#field_11').text()
             expect(firstNameText).to.contain('First name')
 
             //Embedded commands (Closure)
-            cy.get('#field_11').then(fnText => {
-                cy.log(fnText.text())
-                cy.log(fnText)
+            cy.get('#field_11').then((el: any)=> {
+                cy.log(el.text())
+                // cannot cy.log() a strictly typed JQueryElement
+                cy.log(el)
             })
         })
     });

@@ -1,11 +1,11 @@
 class ContactUs {
   contactForm_Submission(
-    firstName,
-    lastName,
-    email,
-    comment,
-    $selector,
-    textToLocate
+    firstName: string,
+    lastName: string,
+    email: string,
+    comment: string,
+    $selector: string,
+    textToLocate: string
   ) {
     cy.get('[name="first_name"]').type(firstName);
     cy.get('[name="last_name"]').type(lastName);

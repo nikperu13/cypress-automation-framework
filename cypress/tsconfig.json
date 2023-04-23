@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "allowJs": true,
+      "target": "es5",
+      "lib": ["es5", "dom"],
+      // adding types here will allow us to globally declare what
+      // we would want to use
+      // alternative to writing "/// <reference types="example" />"
+      // in each file
+      "types": ["cypress", "node", "@cypress/xpath"]
+    },
+    "include": ["**/*.*"]
+}

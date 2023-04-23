@@ -1,7 +1,9 @@
 {
     "env":{
-        "name":"Nicolas Garcia Rosell",
-        "firstName": "Nicolas",
+        "name":"Nicolas Garcia RosellSTG",
+        "firstName": "Nicolas STG",
+        "lastName": "Garcia Rosell STG",
         "webdriveruni_homepage": "http://www.webdriveruniversity.com"
     }
 }
+

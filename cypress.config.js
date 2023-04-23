@@ -1,9 +1,10 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
 const fs = require("fs-extra");
 const path = require("path");
 
 function getConfigurationByFile(file) {
   const pathToConfigFile = path.resolve("cypress/config", `${file}.json`);
+  
 
   if (!fs.existsSync(pathToConfigFile)) {
     console.log("No custom config file found.");
@@ -22,7 +23,7 @@ module.exports = defineConfig({
       return getConfigurationByFile(file);
     },
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}",
-    excludeSpecPattern: "cypress/e2e/other/*.js",
+    // excludeSpecPattern: "cypress/e2e/other/*.ts",
     baseUrl: "http://www.webdriveruniversity.com",
     chromeWebSecurity: false,
     defaultCommandTimeout: 10000,
@@ -31,19 +32,23 @@ module.exports = defineConfig({
     trashAssetsBeforeRuns: true,
     video: false,
     videoUploadOnPasses: false,
-    viewportHeight: 1080,
-    viewportWidth: 1920,
+    // viewportHeight: 1080,
+    // viewportWidth: 1920,
     reporter: "cypress-multi-reporters",
     reporterOptions: {
       configFile: "reporter-config.json",
     },
     retries: {
       runMode: 0,
-      openMode: 1,
+      openMode: 0,
     },
+    // default env variables
+    // will be overriden if we specify --env configFile=configFileName
+    // ex. --env configFile=stg
     env:{
       "name":"Nicolas Garcia Rosell",
       "firstName": "Nicolas",
+      "lastName": "Garcia Rosell",
       "webdriveruni_homepage": "http://www.webdriveruniversity.com"
     }
   },

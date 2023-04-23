@@ -6,7 +6,7 @@ class HomePage {
   clickOn_ContactUs_Button() {
     cy.get("#contact-us")
       .invoke("removeAttr", "target")
-      .click({ force: true }, { timeout: 8000 });
+      .click({ timeout: 8000 });
   }
 }
 export default HomePage;
